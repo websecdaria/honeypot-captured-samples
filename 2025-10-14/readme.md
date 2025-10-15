@@ -22,3 +22,13 @@ Persistent and self-propagating.
 - Domain: `information.cloudsyndication.dev`  
 - Functions: `base64_decode`, `wp_remote_request`, `add_action('admin_footer', ...)`  
 - Markers: `_2869028782`, `_1314088273`, `_3243299888`
+
+### wp-mailer.php
+
+**Brief:** Simple mailer backdoor using PHP’s `mail()` and WordPress `wp_mail()` functions.  
+Accepts base64-encoded parameters (`to`, `subject`, `message`) via cookies or request variables, enabling remote spam or phishing delivery through the infected site.
+
+**Indicators:**  
+- Parameters: `to`, `subject`, `message`  
+- Functions: `mail()`, `wp_mail()`  
+- Uses base64 decoding and hidden cookie keys (e.g. `1519e933e0f96b08752a95331d73ddba`)

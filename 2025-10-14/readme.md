@@ -1,4 +1,4 @@
-### wp-config.php (modified)
+### wp-config.php.txt (modified)
 
 **Brief:** An injection was found in `wp-config.php` that inserts a base64-decoded `<script src="//async.gsyndication.com/">` into the frontend. The injection deliberately excludes admin/API/AJAX paths (checks `is_admin` in local/sessionStorage), a common technique to hide malicious behavior from administrators.
 

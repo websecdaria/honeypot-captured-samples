@@ -21,7 +21,6 @@ Persistent and self-propagating.
 **Indicators:**  
 - Domain: `information.cloudsyndication.dev`  
 - Functions: `base64_decode`, `wp_remote_request`, `add_action('admin_footer', ...)`  
-- Markers: `_2869028782`, `_1314088273`, `_3243299888`
 
 ### wp-mailer.php.txt
 
@@ -32,3 +31,13 @@ Accepts base64-encoded parameters (`to`, `subject`, `message`) via cookies or re
 - Parameters: `to`, `subject`, `message`  
 - Functions: `mail()`, `wp_mail()`  
 - Uses base64 decoding and hidden cookie keys (e.g. `1519e933e0f96b08752a95331d73ddba`)
+
+### akismet.php
+
+**Brief:** Legitimate Akismet plugin modified with a backdoor.  
+Malicious code disables WordPress updates and sends admin requests to `information.cloudsyndication.dev`.  
+It accepts hidden cookie/request keys to execute PHP code, run system commands, and upload or download files remotely.  
+
+**Indicators:**  
+- Domain: `information.cloudsyndication.dev`  
+- Functions: `wp_remote_request`, `eval`, `file_put_contents`, `curl_exec`, `proc_open`  
